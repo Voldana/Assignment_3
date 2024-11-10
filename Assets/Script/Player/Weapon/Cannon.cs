@@ -4,9 +4,9 @@ namespace Script.Player.Weapon
 {
     public class Cannon: Base
     {
-        public override void Shoot()
+        public override void Shoot(Vector3 target)
         {
-            Fire();
+            Fire(target);
             if(!CanFire()) return;
             PlayParticle();
         }

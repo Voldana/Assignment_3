@@ -7,9 +7,8 @@ namespace Script.Player.Weapon
     [Serializable]
     public class Data: ScriptableObject
     {
-        public GameObject projectilePrefab; 
+        public Projectiles.Base projectilePrefab; 
         public float fireRate = 1f; 
-        public float projectileSpeed = 20f; 
         public int damage = 10; 
     }
 }

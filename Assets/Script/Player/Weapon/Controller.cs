@@ -17,7 +17,7 @@ namespace Script.Player.Weapon
         private UnityEngine.Camera mainCamera;
         private Base selectedGun;
         private int selectedGunIndex;
-
+        private Vector3 target;
         private void Start()
         {
             mainCamera = UnityEngine.Camera.main;
@@ -27,15 +27,15 @@ namespace Script.Player.Weapon
 
         private void FixedUpdate()
         {
-            FireWeapon();
             AimBarrel();
+            FireWeapon();
             SwitchWeapon();
         }
 
         private void FireWeapon()
         {
             if (Input.GetMouseButtonDown(0)) 
-                selectedGun.Shoot();
+                selectedGun.Shoot(target);
         }
 
         private void SwitchWeapon()
@@ -54,8 +54,8 @@ namespace Script.Player.Weapon
         {
             if (!mainCamera) return;
             var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
             if (!Physics.Raycast(ray, out var hit, Mathf.Infinity, aimLayerMask)) return;
+            target = hit.point;
             var aimDirection = hit.point - barrel.position;
             aimDirection.y = 0;
             var targetRotation = Quaternion.LookRotation(-aimDirection);

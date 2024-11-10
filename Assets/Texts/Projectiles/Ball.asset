@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 649dfc81fe79401a9daa052347492398, type: 3}
-  m_Name: Missiles
+  m_Script: {fileID: 11500000, guid: 3f7829a571ef48c9a7c028af4a6d1ed3, type: 3}
+  m_Name: Ball
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2523088552732490412, guid: 0864e28d1351c2a4aaf52ed90e74fba0, type: 3}
-  fireRate: 1
-  damage: 10
+  impactPrefab: {fileID: 0}
+  damage: 50
+  speed: 15
+  lifetime: 4
+  hasSplashDamage: 0
+  splashRadius: 0

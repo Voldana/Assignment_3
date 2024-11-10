@@ -13,7 +13,7 @@ namespace Script.UI
         private bool isFilling;
         
         private float currentTime;
-        private float fillTime ;
+        private float fillTime = 2;
 
         private void Start()
         {

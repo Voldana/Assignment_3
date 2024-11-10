@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Script.Player.Weapon.Projectiles
@@ -6,14 +7,21 @@ namespace Script.Player.Weapon.Projectiles
     {
         [SerializeField] private Data data;
 
+        private Vector3 targetPos;
+
         private void Start()
         {
-            Destroy(gameObject, data.lifetime);
+            // Destroy(gameObject, data.lifetime);
+        }
+
+        public void SetTarget(Vector3 target)
+        {
+            targetPos = target;
         }
 
         private void Update()
         {
-            transform.Translate(Vector3.forward * (data.speed * Time.deltaTime));
+            transform.DOMove(targetPos, data.speed).SetSpeedBased(true);
         }
 
         private void OnCollisionEnter(Collision collision)

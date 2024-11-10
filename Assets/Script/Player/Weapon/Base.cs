@@ -20,18 +20,13 @@ namespace Script.Player.Weapon
             return Time.time >= nextFireTime;
         }
 
-        protected void Fire()
+        protected void Fire(Vector3 target)
         {
             if (!CanFire()) return;
             signalBus.Fire(new GameEvents.OnShotFired { cooldown = data.fireRate });
             nextFireTime = Time.time + 1f / data.fireRate;
             var projectile = Instantiate(data.projectilePrefab, firePoint.position, firePoint.rotation);
-            var rb = projectile.GetComponent<Rigidbody>();
-
-            if (rb != null)
-                rb.velocity = firePoint.forward * data.projectileSpeed;
-
-            Destroy(projectile, 5f); // Destroy after 5 seconds to save memory
+            projectile.SetTarget(target);
         }
 
         public void SetSelected(bool state)
@@ -44,6 +39,6 @@ namespace Script.Player.Weapon
             return data;
         }
 
-        public abstract void Shoot();
+        public abstract void Shoot(Vector3 target);
     }
 }

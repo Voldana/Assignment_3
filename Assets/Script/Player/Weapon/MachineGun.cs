@@ -8,11 +8,11 @@ namespace Script.Player.Weapon
         [SerializeField] private float coolDownRate = 1f; 
         private bool isOverheated;
         private float heatLevel;
-        public override void Shoot()
+        public override void Shoot(Vector3 target)
         {
             if (!isOverheated) 
             {
-                Shoot();
+                Shoot(target);
                 heatLevel += Time.deltaTime;
                 if (!(heatLevel >= overheatLimit)) return;
                 isOverheated = true;

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649dfc81fe79401a9daa052347492398, type: 3}
   m_Name: Cannon
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  fireRate: 1
-  projectileSpeed: 20
+  projectilePrefab: {fileID: 2109867729798152760, guid: 6274e3f36da0e924e8bf5b1c9de04a48, type: 3}
+  fireRate: 2
   damage: 10
