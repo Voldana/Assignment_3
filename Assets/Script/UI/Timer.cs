@@ -1,7 +1,7 @@
 using System;
 using DG.Tweening;
 
-namespace Project.Scripts.UI.HUD
+namespace Script.UI
 {
     internal class Timer
     {

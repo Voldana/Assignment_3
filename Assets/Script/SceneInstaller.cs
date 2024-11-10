@@ -11,6 +11,8 @@ namespace Script
             Container.DeclareSignal<GameEvents.OnPlayerHit>();
             Container.DeclareSignal<GameEvents.OnShotFired>();
             Container.DeclareSignal<GameEvents.OnGunSwitch>();
+            Container.DeclareSignal<GameEvents.OnPlayerHeal>();
+            Container.DeclareSignal<GameEvents.OnPlayerDeath>();
         }
     }
 }

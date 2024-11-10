@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97de5ed6112841899c9d409795f93883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 7002556792563710595}
   clock: {fileID: 4180365509670944285}
 --- !u!1 &286401262830977443
 GameObject:

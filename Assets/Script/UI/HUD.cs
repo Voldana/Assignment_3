@@ -1,5 +1,4 @@
 using System;
-using Project.Scripts.UI.HUD;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -10,9 +9,11 @@ namespace Script.UI
     {
         [Inject] private SignalBus signalBus;
         
+        [SerializeField] private TMP_Text scoreText;
         [SerializeField] private TMP_Text clock;
         
         private Timer timer;
+        private int score;
 
         private void Start()
         {
@@ -25,9 +26,16 @@ namespace Script.UI
         {
         }
 
+        private void AddScoreOnTime()
+        {
+            score += 5;
+            scoreText.text = score.ToString();
+        }
+
         private void UpdateTime(int newTime)
         {
             clock.text = $"{newTime / 60}:{newTime % 60:D2}";
+            AddScoreOnTime();
         }
     }
 }
