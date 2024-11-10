@@ -11,7 +11,7 @@ namespace Script.Player.Weapon.Projectiles
 
         private void Start()
         {
-            // Destroy(gameObject, data.lifetime);
+            Destroy(gameObject, data.lifetime);
         }
 
         public void SetTarget(Vector3 target)

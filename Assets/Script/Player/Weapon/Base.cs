@@ -24,7 +24,7 @@ namespace Script.Player.Weapon
         {
             if (!CanFire()) return;
             signalBus.Fire(new GameEvents.OnShotFired { cooldown = data.fireRate });
-            nextFireTime = Time.time + 1f / data.fireRate;
+            nextFireTime = Time.time + data.fireRate;
             var projectile = Instantiate(data.projectilePrefab, firePoint.position, firePoint.rotation);
             projectile.SetTarget(target);
         }

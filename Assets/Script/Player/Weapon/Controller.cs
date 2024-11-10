@@ -34,7 +34,7 @@ namespace Script.Player.Weapon
 
         private void FireWeapon()
         {
-            if (Input.GetMouseButtonDown(0)) 
+            if (Input.GetMouseButton(0)) 
                 selectedGun.Shoot(target);
         }
 

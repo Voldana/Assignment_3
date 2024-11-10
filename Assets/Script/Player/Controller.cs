@@ -1,7 +1,8 @@
+using Script.Player.Weapon;
 using UnityEngine;
 namespace Script.Player
 {
-    public class Controller : MonoBehaviour
+    public class Controller : MonoBehaviour, IHitable
     {
         [SerializeField] private float rotateSpeed = 100f; 
         [SerializeField] private float strafeSpeed = 7f;
@@ -28,6 +29,11 @@ namespace Script.Player
             var movement = transform.forward * move + transform.right * strafe;
             rb.MovePosition(rb.position + movement);
             rb.MoveRotation(rb.rotation * Quaternion.Euler(0, rotate, 0));
+        }
+
+        public void TakeDamage(int damage)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
