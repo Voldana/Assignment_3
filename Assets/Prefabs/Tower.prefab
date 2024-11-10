@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788162621524961952}
   - component: {fileID: 4702164395389023988}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 8404475079106527934}
   - component: {fileID: 4437847830568031440}
   - component: {fileID: 3850895546239259770}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Balcony
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 5303764134612082672}
   - component: {fileID: 4145437549342300928}
   - component: {fileID: 5229621773585785526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}

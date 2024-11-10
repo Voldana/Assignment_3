@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 832931910370081955}
   - component: {fileID: 1032574904876399402}
   - component: {fileID: 5406379269189151658}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 6211441344729529906}
   - component: {fileID: 4820555052190287049}
   - component: {fileID: 6862688682583636356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 237672666579692879}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mortar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 7127759858765362701}
   - component: {fileID: 7077617885263676043}
   - component: {fileID: 8563125482187070088}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}

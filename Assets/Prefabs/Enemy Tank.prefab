@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2525690928853514979}
   - component: {fileID: 2525690928853514980}
   - component: {fileID: 2525690928853514981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 2525690929061376452}
   - component: {fileID: 2525690929061376453}
   - component: {fileID: 2525690929061376454}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2525690929313072925}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 2525690930227980655}
   - component: {fileID: 2525690930227980640}
   - component: {fileID: 2525690930227980641}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2525690930410780636}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TopPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
