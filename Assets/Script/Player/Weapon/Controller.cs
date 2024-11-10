@@ -1,12 +1,14 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 namespace Script.Player.Weapon
 {
     public class Controller : MonoBehaviour
     {
+        [Inject] private SignalBus signalBus;
+        
         [SerializeField] private LayerMask aimLayerMask;
         [SerializeField] private float rotationSpeed = 5f;
         [SerializeField] private Transform barrel;
@@ -38,6 +40,7 @@ namespace Script.Player.Weapon
             selectedGun.SetSelected(false);
             selectedGun = gunList[selectedGunIndex % gunList.Count];
             selectedGun.SetSelected(true);
+            signalBus.Fire(new GameEvents.OnGunSwitch{cooldown = selectedGun.GetData().fireRate});
         }
 
         private void AimBarrel()

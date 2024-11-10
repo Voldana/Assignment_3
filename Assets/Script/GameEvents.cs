@@ -6,7 +6,16 @@ namespace Script
     {
         public struct OnPlayerHit
         {
-            
+        }
+        
+        public struct OnShotFired
+        {
+            public float cooldown;
+        }
+        
+        public struct OnGunSwitch
+        {
+            public float cooldown;
         }
     }
 }
