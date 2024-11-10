@@ -7,14 +7,15 @@ namespace Script.Player.Weapon.Projectiles
 {
     public class Base : MonoBehaviour
     {
-        [SerializeField] private Data data;
+        [SerializeField] protected Data data;
 
+        private bool destroyed;
         private Vector3 targetPos;
         private TweenerCore<Vector3, Vector3,VectorOptions> tween;
 
         private void Start()
         {
-            Destroy(gameObject, data.lifetime);
+            DOVirtual.DelayedCall(data.lifetime, DestroyProjectile);
         }
 
         public void SetTarget(Vector3 target)
@@ -26,6 +27,7 @@ namespace Script.Player.Weapon.Projectiles
 
         private void OnCollisionEnter(Collision collision)
         {
+            if(collision.gameObject.tag.Equals("Player")) return;
             if (data.hasSplashDamage)
                 ApplySplashDamage();
             
@@ -35,23 +37,27 @@ namespace Script.Player.Weapon.Projectiles
 
         private void ApplyDirectDamage(Collision collision)
         {
-            if(collision.gameObject.tag.Equals("Player")) return;
             var target = collision.gameObject.GetComponent<IHitable>();
             target?.TakeDamage(data.damage);
-            tween.Kill();
-            Destroy(gameObject);
+            DestroyProjectile();
         }
 
         private void ApplySplashDamage()
         {
             var hitColliders = Physics.OverlapSphere(transform.position, data.splashRadius);
-            if(hitColliders[0].gameObject.tag.Equals("Player")) return;
             foreach (var hitCollider in hitColliders)
             {
                 var target = hitCollider.GetComponent<IHitable>();
                 target?.TakeDamage(data.damage);
             }
+            DestroyProjectile();
+        }
+
+        private void DestroyProjectile()
+        {
+            if(destroyed) return;
             tween.Kill();
+            destroyed = true;
             Destroy(gameObject);
         }
     }

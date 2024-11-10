@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   impactPrefab: {fileID: 0}
-  damage: 2
-  speed: 50
+  damage: 5
+  speed: 25
   lifetime: 20
   hasSplashDamage: 0
   splashRadius: 0
