@@ -8,7 +8,7 @@ namespace Script.Enemies
 {
     public abstract class Base: MonoBehaviour, IHitable
     {
-        [Inject] private SignalBus signalBus;
+        private SignalBus signalBus;
         
         [SerializeField] private float totalHealth;
         [SerializeField] private Image healthBar;
@@ -16,6 +16,7 @@ namespace Script.Enemies
 
         private UnityEngine.Camera mainCamera;
         private float currentHealth;
+        private bool destroyed;
         private bool buffed;
         
         protected float damage;
@@ -41,9 +42,10 @@ namespace Script.Enemies
         public void TakeDamage(float damage)
         {
             currentHealth -= damage;
-            if (currentHealth <= 0)
+            if (currentHealth <= 0 && !destroyed)
             {
                 signalBus.Fire(new GameEvents.OnEnemyDestroyed{type = type});
+                destroyed = true;
                 Destroy(gameObject);
                 return;
             }
@@ -62,6 +64,11 @@ namespace Script.Enemies
             if(!other.gameObject.tag.Equals("Aura")) return;
             buffed = false;
             damage = baseDamage;
+        }
+
+        public void SetSignalBus(SignalBus signal)
+        {
+            signalBus = signal;
         }
     }
 
