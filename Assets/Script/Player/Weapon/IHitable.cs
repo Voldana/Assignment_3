@@ -4,6 +4,6 @@ namespace Script.Player.Weapon
 {
     public interface IHitable
     { 
-        public void TakeDamage(int damage);
+        public void TakeDamage(float damage);
     }
 }

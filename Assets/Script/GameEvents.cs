@@ -7,7 +7,7 @@ namespace Script
     {
         public struct OnPlayerHit
         {
-            public int damage;
+            public float damage;
         }
         public struct OnPlayerHeal
         {

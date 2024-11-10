@@ -35,7 +35,7 @@ namespace Script.Player
             rb.MoveRotation(rb.rotation * Quaternion.Euler(0, rotate, 0));
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(float damage)
         {
             signalBus.Fire(new GameEvents.OnPlayerHit{damage = damage});
         }

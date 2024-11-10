@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 120
   healthBar: {fileID: 5484384218875279168}
+  baseDamage: 50
 --- !u!65 &7039903036439773531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -501,7 +502,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 492.40002, y: 414}
+  m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8762273038271617619
 Canvas:

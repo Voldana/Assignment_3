@@ -12,14 +12,20 @@ namespace Script.Enemies
         
         [SerializeField] private float totalHealth;
         [SerializeField] private Image healthBar;
+        [SerializeField] private float baseDamage;
 
         private UnityEngine.Camera mainCamera;
         private float currentHealth;
+        private bool buffed;
+        
+        protected float damage;
         protected Type type;
+        
         protected virtual void Start()
         {
-            currentHealth = totalHealth;
             mainCamera = UnityEngine.Camera.main;
+            currentHealth = totalHealth;
+            damage = baseDamage;
         }
 
         private void Update()
@@ -32,7 +38,7 @@ namespace Script.Enemies
             healthBar.transform.LookAt(mainCamera.transform);
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(float damage)
         {
             currentHealth -= damage;
             if (currentHealth <= 0)
@@ -42,6 +48,20 @@ namespace Script.Enemies
                 return;
             }
             healthBar.fillAmount = currentHealth / totalHealth;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if(!other.gameObject.tag.Equals("Aura") || buffed) return;
+            buffed = true;
+            damage *= 2;
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if(!other.gameObject.tag.Equals("Aura")) return;
+            buffed = false;
+            damage = baseDamage;
         }
     }
 
