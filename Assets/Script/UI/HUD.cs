@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using Zenject;
+using Type = Script.Enemies.Type;
 
 namespace Script.UI
 {
@@ -24,6 +25,27 @@ namespace Script.UI
 
         private void SubscribeSignals()
         {
+            signalBus.Subscribe<GameEvents.OnEnemyDestroyed>(EnemyDestroyed);
+        }
+
+        private void EnemyDestroyed(GameEvents.OnEnemyDestroyed signal)
+        {
+            switch (signal.type)
+            {
+                case Type.Mine:
+                    score += 10;
+                    break;
+                case Type.Tank:
+                    score += 20;
+                    break;
+                case Type.Tower:
+                    score += 35;
+                    break;
+                case Type.Mortar:
+                    score += 25;
+                    break;
+            }
+            scoreText.text = score.ToString();
         }
 
         private void AddScoreOnTime()
