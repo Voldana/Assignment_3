@@ -1,13 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Script.Player.Weapon
 {
     public class Controller : MonoBehaviour
     {
+        [SerializeField] private LayerMask aimLayerMask; 
+        [SerializeField] private float rotationSpeed = 5f;
+        [SerializeField] private Transform barrel;
+        [SerializeField] private List<Base> gunList;
+
         private UnityEngine.Camera mainCamera;
-        public LayerMask aimLayerMask; 
-        public float rotationSpeed = 5f;
-        public Transform barrel; 
+        private Base selectedGun;
 
         private void Start()
         {
