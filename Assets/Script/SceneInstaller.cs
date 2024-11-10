@@ -13,6 +13,7 @@ namespace Script
             Container.DeclareSignal<GameEvents.OnGunSwitch>();
             Container.DeclareSignal<GameEvents.OnPlayerHeal>();
             Container.DeclareSignal<GameEvents.OnPlayerDeath>();
+            Container.DeclareSignal<GameEvents.OnEnemyDestroyed>();
         }
     }
 }

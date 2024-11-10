@@ -1,4 +1,6 @@
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using UnityEngine;
 
 namespace Script.Player.Weapon.Projectiles
@@ -8,6 +10,7 @@ namespace Script.Player.Weapon.Projectiles
         [SerializeField] private Data data;
 
         private Vector3 targetPos;
+        private TweenerCore<Vector3, Vector3,VectorOptions> tween;
 
         private void Start()
         {
@@ -17,12 +20,9 @@ namespace Script.Player.Weapon.Projectiles
         public void SetTarget(Vector3 target)
         {
             targetPos = target;
+            tween = transform.DOMove(targetPos, data.speed).SetSpeedBased(true);
         }
 
-        private void Update()
-        {
-            transform.DOMove(targetPos, data.speed).SetSpeedBased(true);
-        }
 
         private void OnCollisionEnter(Collision collision)
         {
@@ -38,6 +38,7 @@ namespace Script.Player.Weapon.Projectiles
             if(collision.gameObject.tag.Equals("Player")) return;
             var target = collision.gameObject.GetComponent<IHitable>();
             target?.TakeDamage(data.damage);
+            tween.Kill();
             Destroy(gameObject);
         }
 
@@ -50,6 +51,7 @@ namespace Script.Player.Weapon.Projectiles
                 var target = hitCollider.GetComponent<IHitable>();
                 target?.TakeDamage(data.damage);
             }
+            tween.Kill();
             Destroy(gameObject);
         }
     }

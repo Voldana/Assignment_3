@@ -1,3 +1,4 @@
+using Script.Enemies;
 using UnityEngine;
 
 namespace Script
@@ -15,6 +16,11 @@ namespace Script
         
         public struct OnPlayerDeath
         {
+        }
+        
+        public struct OnEnemyDestroyed
+        {
+            public Type type;
         }
         
         public struct OnShotFired
