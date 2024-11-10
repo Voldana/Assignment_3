@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -8,6 +9,7 @@ namespace Script.UI
     {
         [Inject] private SignalBus signalBus;
         
+        [SerializeField] private TMP_Text gunName;
         [SerializeField] private Image image;
         
         private bool isFilling;
@@ -29,6 +31,7 @@ namespace Script.UI
         private void GunSwitched(GameEvents.OnGunSwitch signal)
         {
             fillTime = signal.cooldown;
+            gunName.text = signal.name;
             image.fillAmount = 1;
             isFilling = false;
         }

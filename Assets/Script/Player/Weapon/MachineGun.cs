@@ -12,11 +12,10 @@ namespace Script.Player.Weapon
         {
             if (!isOverheated) 
             {
-                Shoot(target);
+                Fire(target);
                 heatLevel += Time.deltaTime;
                 if (!(heatLevel >= overheatLimit)) return;
                 isOverheated = true;
-                Debug.Log("Machine Gun Overheated!");
             }
             else
             {

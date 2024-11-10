@@ -23,7 +23,7 @@ namespace Script.Player.Weapon
         protected void Fire(Vector3 target)
         {
             if (!CanFire()) return;
-            signalBus.Fire(new GameEvents.OnShotFired { cooldown = data.fireRate });
+            signalBus.Fire(new GameEvents.OnShotFired { cooldown = data.fireRate , name = data.name});
             nextFireTime = Time.time + data.fireRate;
             var projectile = Instantiate(data.projectilePrefab, firePoint.position, firePoint.rotation);
             projectile.SetTarget(target);

@@ -31,24 +31,26 @@ namespace Script.Player.Weapon.Projectiles
             
             else
                 ApplyDirectDamage(collision);
-
-            Destroy(gameObject);
         }
 
         private void ApplyDirectDamage(Collision collision)
         {
+            if(collision.gameObject.tag.Equals("Player")) return;
             var target = collision.gameObject.GetComponent<IHitable>();
             target?.TakeDamage(data.damage);
+            Destroy(gameObject);
         }
 
         private void ApplySplashDamage()
         {
             var hitColliders = Physics.OverlapSphere(transform.position, data.splashRadius);
+            if(hitColliders[0].gameObject.tag.Equals("Player")) return;
             foreach (var hitCollider in hitColliders)
             {
                 var target = hitCollider.GetComponent<IHitable>();
                 target?.TakeDamage(data.damage);
             }
+            Destroy(gameObject);
         }
     }
 }

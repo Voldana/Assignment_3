@@ -1,9 +1,13 @@
 using Script.Player.Weapon;
 using UnityEngine;
+using Zenject;
+
 namespace Script.Player
 {
     public class Controller : MonoBehaviour, IHitable
     {
+        [Inject] private SignalBus signalBus;
+        
         [SerializeField] private float rotateSpeed = 100f; 
         [SerializeField] private float strafeSpeed = 7f;
         [SerializeField] private float moveSpeed = 10f;
@@ -33,7 +37,7 @@ namespace Script.Player
 
         public void TakeDamage(int damage)
         {
-            throw new System.NotImplementedException();
+            signalBus.Fire(new GameEvents.OnPlayerHit{damage = damage});
         }
     }
 }

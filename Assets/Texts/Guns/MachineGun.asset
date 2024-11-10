@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MachineGun
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 422645775480151530, guid: 1fef6ea85718b1c42b6b6a56734a7e26, type: 3}
-  fireRate: 1
-  damage: 10
+  fireRate: 0.2
+  name: Machine Gun

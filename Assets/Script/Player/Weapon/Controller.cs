@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using Zenject;
 
@@ -8,7 +9,7 @@ namespace Script.Player.Weapon
     public class Controller : MonoBehaviour
     {
         [Inject] private SignalBus signalBus;
-        
+
         [SerializeField] private LayerMask aimLayerMask;
         [SerializeField] private float rotationSpeed = 5f;
         [SerializeField] private Transform barrel;
@@ -18,11 +19,17 @@ namespace Script.Player.Weapon
         private Base selectedGun;
         private int selectedGunIndex;
         private Vector3 target;
+
         private void Start()
         {
             mainCamera = UnityEngine.Camera.main;
             selectedGun = gunList.First();
             selectedGun.SetSelected(true);
+            DOVirtual.DelayedCall(.5f, () =>
+            {
+                signalBus.Fire(new GameEvents.OnGunSwitch
+                    { cooldown = selectedGun.GetData().fireRate, name = selectedGun.GetData().name });
+            });
         }
 
         private void FixedUpdate()
@@ -34,20 +41,21 @@ namespace Script.Player.Weapon
 
         private void FireWeapon()
         {
-            if (Input.GetMouseButton(0)) 
+            if (Input.GetMouseButton(0))
                 selectedGun.Shoot(target);
         }
 
         private void SwitchWeapon()
         {
             var scroll = Input.GetAxis("Mouse ScrollWheel");
-            if(scroll == 0) return;
+            if (scroll == 0) return;
             var value = (int)Mathf.Sign(scroll);
             selectedGunIndex += value;
             selectedGun.SetSelected(false);
-            selectedGun = gunList[selectedGunIndex % gunList.Count];
+            selectedGun = gunList[Mathf.Abs(selectedGunIndex % gunList.Count)];
             selectedGun.SetSelected(true);
-            signalBus.Fire(new GameEvents.OnGunSwitch{cooldown = selectedGun.GetData().fireRate});
+            signalBus.Fire(new GameEvents.OnGunSwitch
+                { cooldown = selectedGun.GetData().fireRate, name = selectedGun.GetData().name });
         }
 
         private void AimBarrel()

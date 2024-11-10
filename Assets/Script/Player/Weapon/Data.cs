@@ -9,6 +9,6 @@ namespace Script.Player.Weapon
     {
         public Projectiles.Base projectilePrefab; 
         public float fireRate = 1f; 
-        public int damage = 10; 
+        public string name; 
     }
 }

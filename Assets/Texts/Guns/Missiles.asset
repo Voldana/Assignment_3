@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2523088552732490412, guid: 0864e28d1351c2a4aaf52ed90e74fba0, type: 3}
   fireRate: 1
-  damage: 10
+  name: Missiles
