@@ -15,6 +15,6 @@ MonoBehaviour:
   impactPrefab: {fileID: 0}
   damage: 50
   speed: 7.5
-  lifetime: 1
+  lifetime: 2
   hasSplashDamage: 0
   splashRadius: 0

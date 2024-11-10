@@ -28,7 +28,7 @@ namespace Script.Player.Weapon
             DOVirtual.DelayedCall(.5f, () =>
             {
                 signalBus.Fire(new GameEvents.OnGunSwitch
-                    { cooldown = selectedGun.GetData().fireRate, name = selectedGun.GetData().name });
+                    { cooldown = selectedGun.GetData().fireRate, name = selectedGun.GetData().gunName });
             });
         }
 
@@ -55,7 +55,7 @@ namespace Script.Player.Weapon
             selectedGun = gunList[Mathf.Abs(selectedGunIndex % gunList.Count)];
             selectedGun.SetSelected(true);
             signalBus.Fire(new GameEvents.OnGunSwitch
-                { cooldown = selectedGun.GetData().fireRate, name = selectedGun.GetData().name });
+                { cooldown = selectedGun.GetData().fireRate, name = selectedGun.GetData().gunName });
         }
 
         private void AimBarrel()

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Script.Player.Weapon
 {
@@ -9,6 +10,6 @@ namespace Script.Player.Weapon
     {
         public Projectiles.Base projectilePrefab; 
         public float fireRate = 1f; 
-        public string name; 
+        [FormerlySerializedAs("name")] public string gunName; 
     }
 }

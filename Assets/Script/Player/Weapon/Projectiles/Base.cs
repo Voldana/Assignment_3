@@ -11,14 +11,14 @@ namespace Script.Player.Weapon.Projectiles
 
         private bool destroyed;
         private Vector3 targetPos;
-        private TweenerCore<Vector3, Vector3,VectorOptions> tween;
+        protected TweenerCore<Vector3, Vector3,VectorOptions> tween;
 
         private void Start()
         {
             DOVirtual.DelayedCall(data.lifetime, DestroyProjectile);
         }
 
-        public void SetTarget(Vector3 target)
+        public virtual void SetTarget(Vector3 target)
         {
             targetPos = target;
             tween = transform.DOMove(targetPos, data.speed).SetSpeedBased(true);
