@@ -4,7 +4,10 @@ namespace Script.Player.Weapon
 {
     public abstract class Base : MonoBehaviour
     {
+        [SerializeField] private MeshRenderer meshRenderer;
         [SerializeField] private Transform firePoint; 
+        [SerializeField] private Material defaultMat;
+        [SerializeField] private Material selected;
         [SerializeField] private Data data;
 
         private float nextFireTime;
@@ -26,6 +29,11 @@ namespace Script.Player.Weapon
                 rb.velocity = firePoint.forward * data.projectileSpeed;
 
             Destroy(projectile, 5f); // Destroy after 5 seconds to save memory
+        }
+
+        public void SetSelected(bool state)
+        {
+            meshRenderer.material = state ? selected : defaultMat;
         }
 
         public abstract void Shoot(); 
