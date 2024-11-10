@@ -9,6 +9,8 @@ namespace Script
             SignalBusInstaller.Install(Container);
             
             Container.DeclareSignal<GameEvents.OnPlayerHit>();
+            Container.DeclareSignal<GameEvents.OnShotFired>();
+            Container.DeclareSignal<GameEvents.OnGunSwitch>();
         }
     }
 }

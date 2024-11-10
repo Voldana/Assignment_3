@@ -27,8 +27,15 @@ namespace Script.Player.Weapon
 
         private void FixedUpdate()
         {
+            FireWeapon();
             AimBarrel();
             SwitchWeapon();
+        }
+
+        private void FireWeapon()
+        {
+            if (Input.GetMouseButtonDown(0)) 
+                selectedGun.Shoot();
         }
 
         private void SwitchWeapon()
