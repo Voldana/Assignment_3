@@ -5406,6 +5406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f8c90a78dee164ca943dae5d59a692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseMenu: {fileID: 710798218750205674, guid: bdba6a4357c17d94eaf16eb94b035af0, type: 3}
 --- !u!1 &1674547622
 GameObject:
   m_ObjectHideFlags: 0

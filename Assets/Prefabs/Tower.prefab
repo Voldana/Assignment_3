@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 1632137146432950667}
   - component: {fileID: 1016617331707917845}
   - component: {fileID: 420482314677371670}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: Aura
   m_Icon: {fileID: 0}

@@ -32,7 +32,8 @@ namespace Script.UI
             currentHealth -= signal.damage;
             if (currentHealth <= 0)
                 signalBus.Fire(new GameEvents.OnPlayerDeath());
-            health.fillAmount = currentHealth / totalHealth;
+            var fillAmount = currentHealth / totalHealth;
+            health.fillAmount = Mathf.Clamp(fillAmount, 0, 1);
             if (currentHealth / totalHealth <= .25f)
                 PumpHeart();
         }
