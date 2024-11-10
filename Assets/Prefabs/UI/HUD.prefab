@@ -903,6 +903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 500
   health: {fileID: 2848909958931810833}
+  heart: {fileID: 921084548485970325}
 --- !u!1 &5475175852713932003
 GameObject:
   m_ObjectHideFlags: 0
