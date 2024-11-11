@@ -6,9 +6,9 @@ namespace Script.Game
 {
     public class GasCloud : MonoBehaviour
     {
-        [SerializeField] private float speedIncreaseRate = 0.1f;
-        [SerializeField] private float moveSpeed = 10f;
-        [SerializeField] private float speedDecayRate = 0.5f;
+        [SerializeField] private float speedIncreaseRate = .2f;
+        [SerializeField] private float moveSpeed = 5f;
+        [SerializeField] private float speedDecayRate = 1f;
         [SerializeField] private Controller player;
         
         private float currentSpeed;
@@ -17,7 +17,7 @@ namespace Script.Game
             currentSpeed = moveSpeed;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             FollowPlayer();
             if(!player.IsMoving())
@@ -29,7 +29,7 @@ namespace Script.Game
         private void FollowPlayer()
         {
             var direction = (player.transform.position - transform.position).normalized;
-            transform.position += direction * (currentSpeed * Time.fixedDeltaTime);
+            transform.position += direction * (currentSpeed * Time.deltaTime);
         }
 
         private void DecreaseSpeedOverTime()

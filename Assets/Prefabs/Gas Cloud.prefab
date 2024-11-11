@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 936592238904064428}
   - component: {fileID: 936592238904064429}
   - component: {fileID: 936592238904064430}
+  - component: {fileID: -6593838934403949148}
   m_Layer: 0
   m_Name: Gas Cloud
   m_TagString: Untagged
@@ -4813,6 +4814,22 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-6593838934403949148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936592238904064431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6f16ce0ea770440afcaec36874560d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedIncreaseRate: 1
+  moveSpeed: 10
+  speedDecayRate: 1
+  player: {fileID: 0}
 --- !u!1 &4703247384404610775
 GameObject:
   m_ObjectHideFlags: 0

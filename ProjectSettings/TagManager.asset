@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Aura
   - Ground
+  - Gas
   layers:
   - Default
   - TransparentFX

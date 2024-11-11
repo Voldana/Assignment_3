@@ -456,6 +456,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 936592238904064428, guid: 5c9d57c2f976d994da4d0f97b89d2a60, type: 3}
   m_PrefabInstance: {fileID: 936592237990458299}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1338080625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3002429381869531188, guid: 4ac0c1cddfe1f6943899f47cd125198c, type: 3}
+  m_PrefabInstance: {fileID: 1205277705559032474}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 911d19c79fe7d814da0fd0c877500862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1447150100
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +746,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6593838934403949148, guid: 5c9d57c2f976d994da4d0f97b89d2a60, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1338080625}
+    - target: {fileID: -6593838934403949148, guid: 5c9d57c2f976d994da4d0f97b89d2a60, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6593838934403949148, guid: 5c9d57c2f976d994da4d0f97b89d2a60, type: 3}
+      propertyPath: speedIncreaseRate
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 936592238904064428, guid: 5c9d57c2f976d994da4d0f97b89d2a60, type: 3}
       propertyPath: m_RootOrder
       value: 5

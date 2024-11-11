@@ -36,6 +36,8 @@ namespace Script.Game
         {
             borderObject = Instantiate(minimapObject, gasCloud.transform.position, Quaternion.identity);
             mapObject = Instantiate(minimapObject, gasCloud.transform.position, Quaternion.identity);
+            borderObject.transform.SetParent(gasCloud);
+            mapObject.transform.SetParent(gasCloud);
         }
     }
 }
