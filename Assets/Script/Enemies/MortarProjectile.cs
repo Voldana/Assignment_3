@@ -19,6 +19,7 @@ namespace Script.Enemies
 
         private void OnTriggerEnter(Collider other)
         {
+            if(other.gameObject.tag.Equals("Aura") || other.gameObject.tag.Equals("Gas")) return;
             ApplySplashDamage();
         }
 

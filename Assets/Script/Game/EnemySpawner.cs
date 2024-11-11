@@ -10,13 +10,14 @@ namespace Script.Game
         
         [SerializeField] private float minSpawnDistance = 5f;
         [SerializeField] private float spawnRadius = 20f;
-        [SerializeField] private float spawnRate = 1f; // Enemies per second
-        [SerializeField] private Base[] enemyPrefabs; // Array of enemy prefabs (towers, mortars, tanks, mines)
-        [SerializeField] private Transform player; // Array of spawn locations
+        [SerializeField] private float spawnRate = .2f; 
+        [SerializeField] private Base[] enemyPrefabs; 
+        [SerializeField] private Transform player;
+
         
         private float spawnTimer;
-        private int enemyTiers = 1; // Current unlocked enemy tiers
-        private int minePacks = 1; // Number of mine packs to spawn
+        private int enemyTiers = 1; 
+        private int minePacks = 1;
 
         private void Update()
         {

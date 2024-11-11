@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ball
   m_EditorClassIdentifier: 
   impactPrefab: {fileID: 0}
-  damage: 50
-  speed: 7.5
+  damage: 60
+  speed: 12
   lifetime: 2
   hasSplashDamage: 0
   splashRadius: 0

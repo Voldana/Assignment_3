@@ -14,7 +14,7 @@ namespace Script.Enemies
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.gameObject.tag.Equals("Enemy")) return;
+            if(other.gameObject.tag.Equals("Enemy") || other.gameObject.tag.Equals("Gas") || other.gameObject.tag.Equals("Aura")) return;
             switch (other.gameObject.tag)
             {
                 case "Player":

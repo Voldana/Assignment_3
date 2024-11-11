@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cannon
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2109867729798152760, guid: 6274e3f36da0e924e8bf5b1c9de04a48, type: 3}
-  fireRate: 2
-  name: Cannon
+  fireRate: 1
+  gunName: Cannon

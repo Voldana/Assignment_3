@@ -28,7 +28,7 @@ namespace Script.Player.Weapon.Projectiles
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.gameObject.tag.Equals("Player")) return;
+            if(other.gameObject.tag.Equals("Player") || other.gameObject.tag.Equals("Gas") || other.gameObject.tag.Equals("Aura")) return;
             if (data.hasSplashDamage)
                 ApplySplashDamage();
             

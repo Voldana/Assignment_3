@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Missile
   m_EditorClassIdentifier: 
   impactPrefab: {fileID: 0}
-  damage: 25
+  damage: 50
   speed: 10
   lifetime: 1.5
   hasSplashDamage: 1

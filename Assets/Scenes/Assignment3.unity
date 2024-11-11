@@ -935,6 +935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3002429381869531188, guid: 4ac0c1cddfe1f6943899f47cd125198c, type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5232349642786905747, guid: 4ac0c1cddfe1f6943899f47cd125198c, type: 3}
       propertyPath: distance
       value: 4
@@ -961,17 +965,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 930171765}
     - target: {fileID: 1237035735128301848, guid: fdaf2b52d7be87c4d8b8d48171e924d9, type: 3}
+      propertyPath: spawnRate
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237035735128301848, guid: fdaf2b52d7be87c4d8b8d48171e924d9, type: 3}
       propertyPath: enemyPrefabs.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1237035735128301848, guid: fdaf2b52d7be87c4d8b8d48171e924d9, type: 3}
       propertyPath: enemyPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 5302580672480504692, guid: 12b949333499e224d9bd490ca6f208e9, type: 3}
+      objectReference: {fileID: 8164482662859559314, guid: 937d5dbb20266834891fb48a735d2bad, type: 3}
     - target: {fileID: 1237035735128301848, guid: fdaf2b52d7be87c4d8b8d48171e924d9, type: 3}
       propertyPath: enemyPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 8164482662859559314, guid: 937d5dbb20266834891fb48a735d2bad, type: 3}
+      objectReference: {fileID: 5302580672480504692, guid: 12b949333499e224d9bd490ca6f208e9, type: 3}
     - target: {fileID: 1237035735128301848, guid: fdaf2b52d7be87c4d8b8d48171e924d9, type: 3}
       propertyPath: enemyPrefabs.Array.data[3]
       value: 
