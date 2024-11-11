@@ -14,16 +14,14 @@ namespace Script.Enemies
 
         private void OnCollisionEnter(Collision other)
         {
+            if(other.gameObject.tag.Equals("Enemy")) return;
             switch (other.gameObject.tag)
             {
                 case "Player":
                     other.gameObject.GetComponent<IHitable>().TakeDamage(damage);
-                    DestroyProjectile();
-                    break;
-                case "Ground":
-                    DestroyProjectile();
                     break;
             }
+            DestroyProjectile();
         }
 
         private void DestroyProjectile()
