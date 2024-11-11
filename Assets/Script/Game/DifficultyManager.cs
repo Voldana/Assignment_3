@@ -9,8 +9,8 @@ namespace Script.Game
         
         public EnemySpawner enemySpawner; // Reference to the enemy spawner
         public float difficultyIncreaseInterval = 20f; // Time (in seconds) between difficulty increases
-        public float initialSpawnRate = .3f; // Initial spawn rate (enemies per second)
-        public float spawnRateIncrease = 0.1f; // How much to increase the spawn rate each interval
+        public float initialSpawnRate = .1f; // Initial spawn rate (enemies per second)
+        public float spawnRateIncrease = 0.05f; // How much to increase the spawn rate each interval
         public float maxSpawnRate = 5f; // Maximum spawn rate
         public int maxEnemyTiers = 3; // Maximum enemy tiers to unlock
         public int maxMinePacks = 5; // Maximum packs of mines

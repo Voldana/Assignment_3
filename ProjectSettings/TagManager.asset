@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Aura
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - UI
   - Ground
   - Enemy
-  - 
-  - 
+  - Minimap
+  - Invisible
   - 
   - 
   - 
