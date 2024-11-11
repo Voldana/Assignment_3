@@ -8,7 +8,7 @@ namespace Script.Enemies
     {
         [SerializeField] private GameObject sprite;
         
-        private const float Range = 10;
+        private const float Range = 5;
         private float damage;
 
         public void SetDamage(float dmg)
