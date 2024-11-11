@@ -1,3 +1,4 @@
+using System;
 using Script.Player.Weapon;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace Script.Enemies
     {
         [SerializeField] private GameObject sprite;
         
-        private const float Range = 20;
+        private const float Range = 10;
         private float damage;
 
         public void SetDamage(float dmg)
@@ -20,7 +21,14 @@ namespace Script.Enemies
         {
             ApplySplashDamage();
         }
-        
+
+        private void FixedUpdate()
+        {
+            if (!(transform.position.y < 0)) return;
+            ApplySplashDamage();
+            DestroyProjectile();
+        }
+
         private void ApplySplashDamage()
         {
             var hitColliders = Physics.OverlapSphere(transform.position, Range);

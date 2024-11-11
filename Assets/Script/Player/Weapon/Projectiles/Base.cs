@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
@@ -25,17 +26,17 @@ namespace Script.Player.Weapon.Projectiles
         }
 
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            if(collision.gameObject.tag.Equals("Player")) return;
+            if(other.gameObject.tag.Equals("Player")) return;
             if (data.hasSplashDamage)
                 ApplySplashDamage();
             
             else
-                ApplyDirectDamage(collision);
+                ApplyDirectDamage(other.gameObject);
         }
 
-        private void ApplyDirectDamage(Collision collision)
+        private void ApplyDirectDamage(GameObject collision)
         {
             var target = collision.gameObject.GetComponent<IHitable>();
             target?.TakeDamage(data.damage);

@@ -9,6 +9,7 @@ namespace Script.UI
     {
         [Inject] private SignalBus signalBus;
         
+        [SerializeField] private GameObject overHeat;
         [SerializeField] private TMP_Text gunName;
         [SerializeField] private Image image;
         
@@ -30,10 +31,16 @@ namespace Script.UI
 
         private void GunSwitched(GameEvents.OnGunSwitch signal)
         {
+            SetOverheatState(signal.name.Equals("Machine Gun"));
             fillTime = signal.cooldown;
             gunName.text = signal.name;
             image.fillAmount = 1;
             isFilling = false;
+        }
+
+        private void SetOverheatState(bool state)
+        {
+            overHeat.gameObject.SetActive(state);
         }
         
         private void ShotFired(GameEvents.OnShotFired signal)
