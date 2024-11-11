@@ -12,7 +12,7 @@ namespace Script.Enemies
         private float damage;
         private TweenerCore<Vector3, Vector3, VectorOptions> tween;
 
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
             if(other.gameObject.tag.Equals("Enemy")) return;
             switch (other.gameObject.tag)

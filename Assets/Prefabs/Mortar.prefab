@@ -295,6 +295,8 @@ MonoBehaviour:
   totalHealth: 300
   healthBar: {fileID: 4364258409332758327}
   baseDamage: 75
+  projectilePrefab: {fileID: 1797246813865079407, guid: 2ea8f435b19787440910a83859878630, type: 3}
+  fireInterval: 6
 --- !u!65 &563599830578228945
 BoxCollider:
   m_ObjectHideFlags: 0
